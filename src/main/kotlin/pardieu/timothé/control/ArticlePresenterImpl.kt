@@ -1,19 +1,20 @@
 package pardieu.timothé.control
 
-import pardieu.timothé.cms.presenter.ArticlePresenter
 import pardieu.timothé.cms.model.Model
+import pardieu.timothé.cms.presenter.ArticlePresenter
 
-class ArticlePresenterImpl(val model: Model, val view: ArticlePresenter.View):
+class ArticlePresenterImpl(val model: Model, val view: ArticlePresenter.View) :
     ArticlePresenter {
 
-    override fun start(id:Int) {
+    override fun start(id: Int, qParam: String?) {
         val article = model.getArticle(id)
-        if (article != null) {
-            val comments = model.getComments(id)
-            view.displayArticle(article, comments)
-        }
-        else {
-            view.displayArticleNotFound()
+        when {
+            article != null && qParam == null -> {
+                val comments = model.getComments(id)
+                view.displayArticle(article, comments)
+            }
+            article != null && qParam != null -> view.removeArticle(article.id)
+            else -> view.displayArticleNotFound()
         }
     }
 }

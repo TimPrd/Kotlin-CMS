@@ -1,0 +1,5 @@
+nguist-vendored
+*.kt linguist-vendored=false
+*.java linguist-vendored=false
+
+# *.ftl linguist-vendored=false

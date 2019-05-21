@@ -4,9 +4,9 @@ import pardieu.timothé.cms.db.queries.SQLQuery
 import pardieu.timothé.cms.model.Article
 import pardieu.timothé.cms.model.Comment
 import pardieu.timothé.cms.model.Model
+import pardieu.timothé.cms.model.User
 
 class MysqlModel(val pool: ConnectionPool) : Model {
-
     val list = ArrayList<Article>()
 
 
@@ -47,6 +47,7 @@ class MysqlModel(val pool: ConnectionPool) : Model {
         }
         return null
     }
+
 
     override fun createArticle(title: String?, text: String?): String {
         pool.useConnection { connection ->
@@ -89,6 +90,23 @@ class MysqlModel(val pool: ConnectionPool) : Model {
         return list
     }
 
+    override fun getComment(id: Int): Comment? {
+        pool.useConnection { connection ->
+            connection.prepareStatement("SELECT * FROM comments where id = ?").use { stmt ->
+                stmt.setInt(1, id)
+                stmt.executeQuery().use { rs ->
+                    if (rs.next()) {
+                        return Comment(
+                            rs.getInt("id"),
+                            rs.getString("text"),
+                            rs.getInt("idArticle")
+                        )
+                    }
+                }
+            }
+        }
+        return null
+    }
 
     override fun createComment(text: String, idArticle: String) {
         pool.useConnection { connection ->
@@ -99,4 +117,49 @@ class MysqlModel(val pool: ConnectionPool) : Model {
         }
     }
 
+    override fun register(username: String, password: String) {
+        pool.useConnection { connection ->
+            val stmt = connection.prepareStatement("INSERT INTO `users` ( `username`, `password`) VALUES (?,?)")
+            stmt.setString(1, username)
+            stmt.setString(2, password)
+            stmt.executeUpdate()
+        }
+    }
+
+    override fun getUserByUsername(username: String): User? {
+        pool.useConnection { connection ->
+            connection.prepareStatement("SELECT * FROM `users` WHERE username = ?").use { stmt ->
+                stmt.setString(1, username)
+                stmt.executeQuery().use { rs ->
+                    if (rs.next()) {
+                        return User(
+                            rs.getInt("id"),
+                            rs.getString("username"),
+                            rs.getString("password")
+                        )
+                    }
+                }
+            }
+        }
+        return null
+    }
+
+
+    override fun removeArticle(id: Int) {
+        pool.useConnection { connection ->
+            connection.prepareStatement("DELETE FROM `articles` WHERE id = ?").use { stmt ->
+                stmt.setInt(1, id)
+                stmt.executeUpdate()
+            }
+        }
+    }
+
+    override fun removeComment(id: Int) {
+        pool.useConnection { connection ->
+            connection.prepareStatement("DELETE FROM `comments` WHERE id = ?").use { stmt ->
+                stmt.setInt(1, id)
+                stmt.executeUpdate()
+            }
+        }
+    }
 }

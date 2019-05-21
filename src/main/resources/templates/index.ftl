@@ -34,16 +34,6 @@
     <script src="/static/js/modernizr.js"></script>
     <script src="/static/js/pace.min.js"></script>
 
-    <script>
-        function cutString(string, id) {
-            if (string.length > 255) {
-                return "coucou"
-                //document.getElementById("text-" + id ).append(document.createElement("p").append(document.createTextNode(string.slice(0, 100))))
-            }
-        }
-
-    </script>
-
 </head>
 
 <body id="top">
@@ -63,9 +53,13 @@
         <nav id="main-nav-wrap">
             <ul class="main-navigation sf-menu">
                 <li class="current"><a href="/" title="">Home</a></li>
-                <li><a href="/login" title="">Login</a></li>
-                <li><a href="about.html" title="">About</a></li>
-                <li><a href="contact.html" title="">Contact</a></li>
+                <#if session??>
+                    <li><a href="/admin" title="">Dashboard</a></li>
+                    <li><a href="/logout" title="">Logout</a></li>
+                <#else >
+                    <li><a href="/login" title="">Login</a></li>
+                    <li><a href="/register" title="">Register</a></li>
+                </#if>
             </ul>
         </nav> <!-- end main-nav-wrap -->
 
@@ -99,88 +93,10 @@
 <section id="bricks">
 
     <div class="row masonry">
-        <button>
-            <a href="/articles/create"><i class="fas fa-plus"></i> Article</a>
-        </button>
-
-
         <!-- brick-wrapper -->
         <div class="bricks-wrapper">
 
             <div class="grid-sizer"></div>
-
-            <div class="brick entry featured-grid animate-this">
-                <div class="entry-content">
-                    <div id="featured-post-slider" class="flexslider">
-                        <ul class="slides">
-
-                            <li>
-                                <div class="featured-post-slide">
-
-                                    <div class="post-background"
-                                         style="background-image:url('/static/images/thumbs/featured/featured-1.jpg');"></div>
-
-                                    <div class="overlay"></div>
-
-                                    <div class="post-content">
-                                        <ul class="entry-meta">
-                                            <li>September 06, 2016</li>
-                                            <li><a href="#">Naruto Uzumaki</a></li>
-                                        </ul>
-
-                                        <h1 class="slide-title"><a href="single-standard.html" title="">Minimalism Never
-                                                Goes Out of Style</a></h1>
-                                    </div>
-
-                                </div>
-                            </li> <!-- /slide -->
-
-                            <li>
-                                <div class="featured-post-slide">
-
-                                    <div class="post-background"
-                                         style="background-image:url('/static/images/thumbs/featured/featured-2.jpg');"></div>
-
-                                    <div class="overlay"></div>
-
-                                    <div class="post-content">
-                                        <ul class="entry-meta">
-                                            <li>August 29, 2016</li>
-                                            <li><a href="#">Sasuke Uchiha</a></li>
-                                        </ul>
-
-                                        <h1 class="slide-title"><a href="single-standard.html" title="">Enhancing Your
-                                                Designs with Negative Space</a></h1>
-                                    </div>
-
-                                </div>
-                            </li> <!-- /slide -->
-
-                            <li>
-                                <div class="featured-post-slide">
-
-                                    <div class="post-background"
-                                         style="background-image:url('/static/images/thumbs/featured/featured-3.jpg');;"></div>
-
-                                    <div class="overlay"></div>
-
-                                    <div class="post-content">
-                                        <ul class="entry-meta">
-                                            <li>August 27, 2016</li>
-                                            <li><a href="#" class="author">Naruto Uzumaki</a></li>
-                                        </ul>
-
-                                        <h1 class="slide-title"><a href="single-standard.html" title="">Music Album
-                                                Cover Designs for Inspiration</a></h1>
-                                    </div>
-
-                                </div>
-                            </li> <!-- end slide -->
-
-                        </ul> <!-- end slides -->
-                    </div> <!-- end featured-post-slider -->
-                </div> <!-- end entry content -->
-            </div>
             <#list list as item>
                 <article class="brick entry format-standard animate-this">
 
@@ -205,14 +121,14 @@
             <div id="text-${item.id}" class="entry-excerpt">
 
                 <#if item.text?length &gt; 100>
-                    <script>
-                        var t = document.createTextNode("${item.text?js_string}".slice(0, 250) + "... [voir la suite]");
-                        var p = document.createElement("p");
-                        p.append(t);
-                        document.getElementById("text-${item.id}").append(p)
+                <script>
+                    var t = document.createTextNode("${item.text?js_string}".slice(0, 250) + "... [voir la suite]");
+                    var p = document.createElement("p");
+                    p.append(t);
+                    document.getElementById("text-${item.id}").append(p)
 
 
-                    </script>
+                </script>
                 <#else>
                     ${item.text}
                 </#if>

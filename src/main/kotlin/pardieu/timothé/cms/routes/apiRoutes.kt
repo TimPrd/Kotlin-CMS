@@ -34,6 +34,10 @@ fun Route.apiRoutes(appComponent: AppComponent) {
             call.respond(HttpStatusCode.NotFound)
         else
             appComponent.getArticlePresenter(object : ArticlePresenter.View {
+                override fun removeArticle(articleId: Int) {
+                    TODO("not implemented") //To change body of created functions use File | Settings | File Templates.
+                }
+
                 override fun displayArticle(
                     article: Article?,
                     comments: List<Comment>?
@@ -48,7 +52,6 @@ fun Route.apiRoutes(appComponent: AppComponent) {
                         call.respond(HttpStatusCode.NotFound)
                     }
                 }
-            }).start(id)
-
+            }).start(id, call.parameters["action"])
     }
 }

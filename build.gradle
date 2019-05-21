@@ -21,7 +21,7 @@ dependencies {
     implementation "mysql:mysql-connector-java:8.0.16"
     implementation "com.github.salomonbrys.kotson:kotson:2.5.0"
     implementation "io.ktor:ktor-auth:$ktor_version"
-
+    implementation "de.mkammerer:argon2-jvm:2.5"
 
     testImplementation "org.junit.jupiter:junit-jupiter-api:$junit_version"
     testImplementation "com.nhaarman.mockitokotlin2:mockito-kotlin:$mockito_version"

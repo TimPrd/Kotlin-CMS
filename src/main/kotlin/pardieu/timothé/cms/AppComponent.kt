@@ -5,6 +5,8 @@ import pardieu.timothé.cms.db.MysqlModel
 import pardieu.timothé.cms.model.Model
 import pardieu.timothé.cms.presenter.ArticleListPresenter
 import pardieu.timothé.cms.presenter.ArticlePresenter
+import pardieu.timothé.cms.presenter.CommentPresenter
+import pardieu.timothé.control.CommentPresenterImpl
 import pardieu.timothé.control.ArticleListPresenterImpl
 import pardieu.timothé.control.ArticlePresenterImpl
 
@@ -25,6 +27,12 @@ class AppComponent( mysqlUrl: String, mysqlUser: String,  mysqlPassword:String) 
     fun getArticlePresenter(view: ArticlePresenter.View): ArticlePresenter {
         return ArticlePresenterImpl(getModel(), view )
     }
+
+    fun getCommentPresenter(view: CommentPresenter.View): CommentPresenter {
+        return CommentPresenterImpl(getModel(), view)
+    }
+
+
 
 }
 
