@@ -21,7 +21,7 @@ Two users are available :
   - password: user
   
 -----
-To-Do:
+**To-Do**:
 
  - [x] Style
 
@@ -41,7 +41,7 @@ To-Do:
 
 ---
 
-Bonus: 
+**Bonus**: 
 
  - [x] Utilisation d'Argon2
  - [x] Properties
