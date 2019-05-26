@@ -3,7 +3,7 @@ import pardieu.timothé.cms.db.MysqlModel
 
 class MySQLModelTests {
 
-    fun simpleTest(){
+    fun simpleTest() {
         val pool = ConnectionPool("jdbc:h2:mem:CMS;MODE=MySQL", "", "")
 
         pool.useConnection { connection ->
@@ -11,7 +11,7 @@ class MySQLModelTests {
             DROP TABLE IF EXISTS...
 
             """
-            connection.prepareStatement(sql).use{ stmt ->
+            connection.prepareStatement(sql).use { stmt ->
                 stmt.execute()
             }
         }

@@ -7,18 +7,18 @@
 </head>
 <body>
 
-<h1>New Article</h1>
+<h1>Register</h1>
 
 <form id="login-form" action="/register" method="post">
+    <input name="email" type="email" placeholder="Email" required>
     <input name="username" type="text" placeholder="Username" required>
     <input name="password" type="password" placeholder="Password" required>
-    <button type="submit">Login</button>
-    <label for="form-switch"><span>Register</span></label>
+    <button type="submit">Register</button>
 </form>
 
 
 
-<a href="/articles">Retour aux articles</a>
+<a href="/articles">Back to articles</a>
 
 </body>
 </html>

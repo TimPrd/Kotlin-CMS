@@ -1,4 +1,4 @@
-package pardieu.timothé.control
+package pardieu.timothé.cms.control
 
 import pardieu.timothé.cms.model.Model
 import pardieu.timothé.cms.presenter.ArticlePresenter

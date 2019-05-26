@@ -10,7 +10,7 @@
     <!--- basic page needs
     ================================================== -->
     <meta charset="utf-8">
-    <title>Abstract</title>
+    <title>CMS</title>
     <meta name="description" content="">
     <meta name="author" content="">
 
@@ -51,14 +51,16 @@
             <ul class="main-navigation sf-menu">
                 <li class="current"><a href="/" title="">Home</a></li>
                 <#if session??>
-                    <li><a href="/logout" title="">Logout</a></li>
-                    <li><a href="/admin" title="">Dashboard</a></li>
-                <#else >
+                    <#if session.admin>
+                        <li><a href="/admin" title="">Dashboard</a></li>
+                        <li><a href="/logout" title="">Logout</a></li>
+                    <#else >
+                        <li><a href="/logout" title="">Logout</a></li>
+                    </#if>
+                <#else>
                     <li><a href="/login" title="">Login</a></li>
                     <li><a href="/register" title="">Register</a></li>
                 </#if>
-                <li><a href="about.html" title="">About</a></li>
-                <li><a href="contact.html" title="">Contact</a></li>
             </ul>
         </nav> <!-- end main-nav-wrap -->
 
@@ -91,9 +93,8 @@
 ================================================== -->
 <section id="bricks">
     <div id="createBtn">
-        <button>
-            <a href="/articles/create"><i class="fas fa-plus"></i>Article</a>
-        </button>
+        <a href="/articles/create"><i class="fas fa-plus"></i>Article</a>
+        <a href="/admin/users"><i class="fas fa-exchange"></i>Manage users</a>
     </div>
 
     <table>
@@ -101,20 +102,20 @@
         <tr>
             <th>ID</th>
             <th>Title</th>
+            <th>Delete</th>
         </tr>
         </thead>
         <tbody>
 
 
         <#list list as item>
-
-            <tr>
+            <tr style="text-align: center">
             <td># ${item.id}</td>
-            <td>${item.title}</td>
             <td>
-                <button class="red">
-                    <a href="/articles/${item.id}?action=delete" class="red"><i class="fas fa-trash"></i></a>
-                </button>
+        <a href="/articles/${item.id}">${item.title}</a>
+            </td>
+            <td>
+        <a href="/articles/${item.id}?action=delete" ><i class="fas fa-trash"></i></a>
             </td>
             </tr>
 

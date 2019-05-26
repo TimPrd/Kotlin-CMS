@@ -19,17 +19,14 @@ import pardieu.timothé.cms.model.Comment
 import pardieu.timothé.cms.presenter.ArticleListPresenter
 import pardieu.timothé.cms.presenter.ArticlePresenter
 import pardieu.timothé.cms.tpl.IndexContext
-import pardieu.timothé.cms.tpl.SampleSession
+import pardieu.timothé.cms.tpl.UserSession
 
 fun Route.articlesRoutes(appComponent: AppComponent) {
 
     get {
         val controller = appComponent.getArticleListPresenter(object : ArticleListPresenter.View {
             override fun displayArticleList(list: List<Article>) {
-                //val u call.sessions.get<SampleSession>()
-                // if session -> if isAdmin else
-                val ctx = IndexContext(list, call.sessions.get<SampleSession>())
-                println(ctx.session)
+                val ctx = IndexContext(list, call.sessions.get<UserSession>())
                 launch {
                     call.respond(FreeMarkerContent("index.ftl", ctx, "e"))
                 }
@@ -39,7 +36,6 @@ fun Route.articlesRoutes(appComponent: AppComponent) {
     }
     get("{id}") {
         val controller = appComponent.getArticlePresenter(object : ArticlePresenter.View {
-
             override fun displayArticleNotFound() {
                 launch {
                     call.respond(HttpStatusCode.NotFound)
@@ -51,15 +47,17 @@ fun Route.articlesRoutes(appComponent: AppComponent) {
                 comments: List<Comment>?
             ) {
                 launch {
-                    val currentSession = call.sessions.get<SampleSession>()
-                    val isAdmin = (currentSession != null && currentSession.isAdmin )
+                    //val currentSession =
+                    val isAdmin =
+                        call.sessions.get<UserSession>() != null//(currentSession != null && currentSession.isAdmin)
                     call.respond(
                         FreeMarkerContent(
                             "article.ftl",
                             mapOf(
                                 "article" to article,
                                 "comments" to comments,
-                                "isAdmin" to isAdmin
+                                "isAdmin" to isAdmin,
+                                "ctx" to call.sessions.get<UserSession>()
                             ),
                             "e"
                         )
@@ -87,6 +85,7 @@ fun Route.articlesRoutes(appComponent: AppComponent) {
             call.respond(FreeMarkerContent("create.ftl", mapOf("text" to "", "title" to "")))
         }
         post {
+
             val body = call.receiveParameters()
             val id = appComponent.getModel().createArticle(body["title"], body["text"])
             if (id.equals("-1"))

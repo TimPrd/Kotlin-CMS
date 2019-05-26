@@ -13,12 +13,12 @@
     <input type="text" name="title" value="${title}"/> <br/>
 
     <label>Text</label>
-    <input type="text" name="text" value="${text}"/> <br/>
+    <textarea type="text" name="text" value="${text}">Enter body...</textarea> <br/>
 
     <button type"submit">Done</button>
 </form>
 
-<a href="/articles">Retour aux articles</a>
+<a href="/articles">Back to articles</a>
 
 </body>
 </html>

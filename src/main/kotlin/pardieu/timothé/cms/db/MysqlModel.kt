@@ -7,6 +7,8 @@ import pardieu.timothé.cms.model.Model
 import pardieu.timothé.cms.model.User
 
 class MysqlModel(val pool: ConnectionPool) : Model {
+
+
     val list = ArrayList<Article>()
 
 
@@ -80,9 +82,12 @@ class MysqlModel(val pool: ConnectionPool) : Model {
                             Comment(
                                 rs.getInt("id"),
                                 rs.getString("text"),
-                                rs.getInt("idArticle")
+                                rs.getInt("idArticle"),
+                                rs.getString("datecreation"),
+                                rs.getString("username")
                             )
                         )
+                        println(rs.getString("username"))
                     }
                 }
             }
@@ -99,7 +104,9 @@ class MysqlModel(val pool: ConnectionPool) : Model {
                         return Comment(
                             rs.getInt("id"),
                             rs.getString("text"),
-                            rs.getInt("idArticle")
+                            rs.getInt("idArticle"),
+                            rs.getString("datecreation"),
+                            rs.getString("username")
                         )
                     }
                 }
@@ -108,20 +115,26 @@ class MysqlModel(val pool: ConnectionPool) : Model {
         return null
     }
 
-    override fun createComment(text: String, idArticle: String) {
+    override fun createComment(text: String, idArticle: String, datecreation: String, username: String) {
         pool.useConnection { connection ->
-            val stmt = connection.prepareStatement("INSERT INTO `comments` ( `text`, `idArticle`) VALUES (?,?)")
+            val stmt =
+                connection.prepareStatement("INSERT INTO `comments` ( `text`, `idArticle`, `datecreation`, `username`) VALUES (?,?, ?,?)")
             stmt.setString(1, text)
             stmt.setString(2, idArticle)
+            stmt.setString(3, datecreation)
+            stmt.setString(4, username)
+
             stmt.executeUpdate()
         }
     }
 
-    override fun register(username: String, password: String) {
+    override fun register(email: String, username: String, password: String) {
         pool.useConnection { connection ->
-            val stmt = connection.prepareStatement("INSERT INTO `users` ( `username`, `password`) VALUES (?,?)")
-            stmt.setString(1, username)
-            stmt.setString(2, password)
+            val stmt =
+                connection.prepareStatement("INSERT INTO `users` ( `email`,`username`, `password`) VALUES (?,?,?)")
+            stmt.setString(1, email)
+            stmt.setString(2, username)
+            stmt.setString(3, password)
             stmt.executeUpdate()
         }
     }
@@ -134,8 +147,10 @@ class MysqlModel(val pool: ConnectionPool) : Model {
                     if (rs.next()) {
                         return User(
                             rs.getInt("id"),
+                            rs.getString("email"),
                             rs.getString("username"),
-                            rs.getString("password")
+                            rs.getString("password"),
+                            rs.getBoolean("isAdmin")
                         )
                     }
                 }
@@ -162,4 +177,56 @@ class MysqlModel(val pool: ConnectionPool) : Model {
             }
         }
     }
+
+    override fun getUsers(): List<User> {
+        val list = ArrayList<User>()
+        pool.useConnection { connection ->
+            connection.prepareStatement("SELECT * FROM users").use { stmt ->
+                stmt.executeQuery().use { rs ->
+                    while (rs.next()) {
+                        list.add(
+                            User(
+                                rs.getInt("id"),
+                                rs.getString("email"),
+                                rs.getString("username"),
+                                "", rs.getBoolean("isAdmin")
+                            )
+                        )
+                    }
+                }
+            }
+        }
+        return list
+    }
+
+
+    override fun upgradeUser(id: Int) {
+        pool.useConnection { connection ->
+            connection.prepareStatement("UPDATE `users` SET `isAdmin`= ? WHERE id = ?").use { stmt ->
+                stmt.setInt(1, 1)
+                stmt.setInt(2, id)
+                stmt.executeUpdate()
+            }
+        }
+    }
+
+    override fun downgradeUser(id: Int) {
+        pool.useConnection { connection ->
+            connection.prepareStatement("UPDATE `users` SET `isAdmin`= ? WHERE id = ?").use { stmt ->
+                stmt.setInt(1, 0)
+                stmt.setInt(2, id)
+                stmt.executeUpdate()
+            }
+        }
+    }
+
+    override fun deleteUser(id: Int) {
+        pool.useConnection { connection ->
+            connection.prepareStatement("DELETE FROM `users` WHERE id = ?").use { stmt ->
+                stmt.setInt(1, id)
+                stmt.executeUpdate()
+            }
+        }
+    }
+
 }

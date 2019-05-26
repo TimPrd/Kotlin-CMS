@@ -24,23 +24,33 @@ import io.ktor.server.netty.Netty
 import io.ktor.sessions.*
 import kotlinx.coroutines.launch
 import pardieu.timothé.cms.model.Article
+import pardieu.timothé.cms.model.User
 import pardieu.timothé.cms.presenter.ArticleListPresenter
+import pardieu.timothé.cms.presenter.UserListPresenter
+import pardieu.timothé.cms.routes.adminRoutes
 import pardieu.timothé.cms.routes.apiRoutes
 import pardieu.timothé.cms.routes.articlesRoutes
 import pardieu.timothé.cms.routes.commentsRoutes
 import pardieu.timothé.cms.tpl.IndexContext
-import pardieu.timothé.cms.tpl.SampleSession
-
-
-data class AuthenticatedUser(val name: String)
+import pardieu.timothé.cms.tpl.UserPrincipalCustom
+import pardieu.timothé.cms.tpl.UserSession
+import java.io.FileInputStream
+import java.util.*
 
 class App
 
+
 fun main() {
+    val prop = Properties()
+    prop.load(FileInputStream("src/main/kotlin/pardieu/timothé/cms/config.properties"))
 
-    val appComponent = AppComponent("jdbc:mysql://localhost:8889/CMS?serverTimezone=UTC", "cms", "cms")
 
-    embeddedServer(Netty, 8001) {
+    val appComponent = AppComponent(
+        prop.getProperty("url"), prop.getProperty("username"), prop.getProperty("password")
+    )
+
+
+    embeddedServer(Netty, prop.getProperty("port").toInt()) {
         install(AutoHeadResponse)
         install(DefaultHeaders) {
             header("X-Engine", "Ktor") // will send this header with each response
@@ -49,15 +59,15 @@ fun main() {
             templateLoader = ClassTemplateLoader(App::class.java.classLoader, "templates")
         }
         install(Sessions) {
-            cookie<SampleSession>("cookie")
+            cookie<UserSession>("User", SessionStorageMemory())
         }
         install(Authentication) {
             form(name = "form_auth") {
                 val argon2 = Argon2Factory.create()
-                skipWhen { call -> call.sessions.get<SampleSession>() != null }
+                skipWhen { call -> call.sessions.get<UserSession>() != null }
                 userParamName = "name"
                 passwordParamName = "password"
-                challenge = FormAuthChallenge.Redirect { credentials -> "/login" }
+                challenge = FormAuthChallenge.Redirect { "/login" }
                 validate { credentials ->
                     try {
                         // Hash password
@@ -67,7 +77,7 @@ fun main() {
                             null
                         } else {
                             if (argon2.verify(usr.password, credentials.password)) {
-                                UserIdPrincipal(credentials.name)
+                                UserPrincipalCustom(usr.email, usr.isAdmin)
                             } else {
                                 null
                             }
@@ -99,13 +109,10 @@ fun main() {
             authenticate("form_auth") {
                 post("/login") {
 
-                    val principal = call.authentication.principal<UserIdPrincipal>()
+                    val principal = call.authentication.principal<UserPrincipalCustom>()
                     if (principal != null) {
-                        println(principal)
-
-                        //call.sessions.set(UserSession(principal.name))
-                        call.sessions.set(SampleSession(name = "John", value = 12, isAdmin = true))
-                        call.respondRedirect("/articles/1")
+                        call.sessions.set(UserSession(principal.name, principal.isAdmin))
+                        if (principal.isAdmin) call.respondRedirect("/admin/") else call.respondRedirect("/articles/")
                     } else {
                         call.respondRedirect("/articles/")
                     }
@@ -115,17 +122,18 @@ fun main() {
 
             route("/articles") { articlesRoutes(appComponent) }
             route("/comments") { commentsRoutes(appComponent) }
+            route("/admin") { adminRoutes(appComponent) }
+
             route("/login") {
                 get {
                     call.respond(FreeMarkerContent("login.ftl", mapOf("name" to "", "password" to "")))
                 }
-
             }
 
             route("/logout") {
                 get {
-                    if (call.sessions.get<SampleSession>() != null) {
-                        call.sessions.clear<SampleSession>()
+                    if (call.sessions.get<UserSession>() != null) {
+                        call.sessions.clear<UserSession>()
                         call.respondRedirect("/articles/")
                     }
                 }
@@ -138,139 +146,24 @@ fun main() {
                 }
                 post {
                     val body = call.receiveParameters()
-                    val password = body["password"]
-                    val username = body["username"]!!
-                    val argon2 = Argon2Factory.create()
-                    val hash = argon2.hash(10, 65536, 1, password)
-                    appComponent.getModel().register(username, hash)
-                    call.respond(FreeMarkerContent("login.ftl", mapOf("name" to "", "password" to "")))
-                }
-            }
-
-
-            route("/admin") {
-                get {
-                    val controller = appComponent.getArticleListPresenter(object : ArticleListPresenter.View {
-                        override fun displayArticleList(list: List<Article>) {
-                            val ctx = IndexContext(list, call.sessions.get<SampleSession>())
-                            println(ctx.session)
-                            launch {
-                                call.respond(FreeMarkerContent("dashboard.ftl", ctx, "e"))
-                            }
-                        }
-                    })
-                    controller.start()
-                }
-            }
-            route("api") { apiRoutes(appComponent) }
-
-            /*    route("/"){
-                    get("login"){
+                    if ("password" !in body || "email" !in body || "username" !in body) {
+                        call.respond(FreeMarkerContent("register.ftl", mapOf("username" to "", "password" to "")))
+                    } else {
+                        val email = body["email"]!!
+                        val password = body["password"]
+                        val username = body["username"]!!
+                        val argon2 = Argon2Factory.create()
+                        val hash = argon2.hash(10, 65536, 1, password)
+                        appComponent.getModel().register(email, username, hash)
                         call.respond(FreeMarkerContent("login.ftl", mapOf("name" to "", "password" to "")))
                     }
                 }
-
-
-                authenticate {
-                    post("login") {
-                        val principal = call.principal<UserIdPrincipal>()
-                        print(principal)
-                        val result = if (principal != null) {
-                            print("Principal not null")
-                            /*dbQuery {
-                                UserDao.select { UserDao.username eq principal.name }.firstOrNull()?.let {
-                                    val profile = Profile(
-                                        it[UserDao.id].toString()
-                                    ).apply {
-                                        username = it[UserDao.username]
-                                        displayName = it[UserDao.name]
-                                    }
-
-                                    call.sessions.set(profile)
-
-                                    HttpStatusCode.OK
-                                } ?: HttpStatusCode.Unauthorized */
-                            call.sessions.set(SampleSession(name = "John", value = 12))
-                        } else {
-                            print("Unauthorized")
-                        }
-                        HttpStatusCode.OK
-                    }
-                }*/
-            /*route("/login") {
-                authentication {
-                    form {
-                        validate { up: UserPasswordCredential ->
-                            when {
-                                up.password == "ppp" -> UserIdPrincipal(up.name)
-                                else -> null
-                            }
-                        }
-                    }
-                }
-
-                handle {
-                    val principal = call.authentication.principal<UserIdPrincipal>()
-                    if (principal != null) {
-                        print("YYYYYYHUDHIZUHDUHUIHZDUHZDUIHUIZHDUHZUHDIUZDHU")
-                        call.respondText("Hello, ${principal.name}")
-                    } else {
-                        print("FOOOOOOOOOOOOOOORM")
-                        /* val html = createHTML().html {
-                             body {
-                                 form(
-                                     action = "/login",
-                                     encType = FormEncType.applicationXWwwFormUrlEncoded,
-                                     method = FormMethod.post
-                                 ) {
-                                     p {
-                                         +"user:"
-                                         textInput(name = "user") {
-                                             value = principal?.name ?: ""
-                                         }
-                                     }
-
-                                     p {
-                                         +"password:"
-                                         passwordInput(name = "pass")
-                                     }
-
-                                     p {
-                                         submitInput() { value = "Login" }
-                                     }
-                                 }
-                             }
-                         }
-                         call.respondText(html, ContentType.Text.Html)*/
-                        call.respond(FreeMarkerContent("login.ftl", mapOf("user" to "", "pass" to "")))
-
-                    }
-                }
-            }*/
-        }
-
-        /*routing {
-            route("/login") {
-                authentication {
-                    form {
-                        validate { if (it.name == "test" && it.password == "password") UserIdPrincipal(it.name) else null }
-
-                    }
-                }
-
-                handle {
-                    val principal = call.authentication.principal<UserIdPrincipal>()
-                    if (principal != null) {
-                        print("OUIIIIIIIIIIIIIIIIIIII")
-                        call.respondText("Hello, ${principal.name}")
-                    } else {
-                        print("NOOOOOOOON ENCULE")
-                        val name = principal?.name ?: ""
-                        call.respond(FreeMarkerContent("login.ftl", /*mapOf("name" to name, "password" to ""*/null , "e"))
-                    }
-                }
             }
-        }*/
+
+
+
+            route("api") { apiRoutes(appComponent) }
+
+        }
     }.start(wait = true)
 }
-

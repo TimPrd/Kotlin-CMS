@@ -17,14 +17,17 @@ import pardieu.timothé.cms.model.Article
 import pardieu.timothé.cms.presenter.ArticleListPresenter
 import pardieu.timothé.cms.presenter.CommentPresenter
 import pardieu.timothé.cms.tpl.IndexContext
-import pardieu.timothé.cms.tpl.SampleSession
+import pardieu.timothé.cms.tpl.UserSession
+import java.time.LocalDateTime
+import java.time.format.DateTimeFormatter
+import java.time.format.FormatStyle
 
 fun Route.commentsRoutes(appComponent: AppComponent) {
 
     get {
         val controller = appComponent.getArticleListPresenter(object : ArticleListPresenter.View {
             override fun displayArticleList(list: List<Article>) {
-                val ctx = IndexContext(list, call.sessions.get<SampleSession>())
+                val ctx = IndexContext(list, call.sessions.get<UserSession>())
                 launch {
                     call.respond(FreeMarkerContent("index.ftl", ctx, "e"))
                 }
@@ -35,17 +38,13 @@ fun Route.commentsRoutes(appComponent: AppComponent) {
 
     post {
         val body = call.receiveParameters()
-        //val controller = appComponent.(object : ArticleListPresenter.View {
+        val current = LocalDateTime.now()
 
-        val id = appComponent.getModel().createComment(body["text"]!!, body["current"]!!)
+        val formatter = DateTimeFormatter.ofLocalizedDateTime(FormatStyle.MEDIUM)
+        val formatted = current.format(formatter)
 
+        appComponent.getModel().createComment(body["text"]!!, body["current"]!!, formatted, body["username"]!!)
         call.respondRedirect("/articles/${body["current"]!!}")
-
-        /*val id = model.createArticle(, body["text"])
-        if (id.equals("-1"))
-            call.respondRedirect("/articles/")
-        else
-            call.respondRedirect("/articles/$id")*/
     }
 
 
@@ -53,15 +52,22 @@ fun Route.commentsRoutes(appComponent: AppComponent) {
         val controller = appComponent.getCommentPresenter(object : CommentPresenter.View {
             override fun removeComment(commentId: Int) {
                 launch {
+                    val articleRelated = appComponent.getModel().getComment(commentId)
                     appComponent.getModel().removeComment(commentId)
-                    call.respondRedirect("/articles/")
+                    call.respondRedirect("/articles/${articleRelated!!.idArticle}")
                 }
             }
         })
         val id = call.parameters["id"]!!.toIntOrNull()
         if (id == null)
             call.respond(HttpStatusCode.NotFound)
-        else
-            controller.removeComment(id, call.parameters["action"])
+        else {
+            val session = call.sessions.get<UserSession>()
+            if (session != null && session.isAdmin)
+                controller.removeComment(id, call.parameters["action"])
+            else {
+                call.respond(HttpStatusCode.Forbidden)
+            }
+        }
     }
 }

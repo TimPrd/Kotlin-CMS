@@ -10,7 +10,7 @@
     <!--- basic page needs
     ================================================== -->
     <meta charset="utf-8">
-    <title>Standard Format Post - Abstract</title>
+    <title>CMS</title>
     <meta name="description" content="">
     <meta name="author" content="">
 
@@ -48,35 +48,23 @@
     <div class="row header-content">
 
         <div class="logo">
-            <a href="index.html">Author</a>
+            <a href="/">Author</a>
         </div>
 
         <nav id="main-nav-wrap">
             <ul class="main-navigation sf-menu">
-                <li><a href="index.html" title="">Home</a></li>
-                <li class="has-children">
-                    <a href="category.html" title="">Categories</a>
-                    <ul class="sub-menu">
-                        <li><a href="category.html">Wordpress</a></li>
-                        <li><a href="category.html">HTML</a></li>
-                        <li><a href="category.html">Photography</a></li>
-                        <li><a href="category.html">UI</a></li>
-                        <li><a href="category.html">Mockups</a></li>
-                        <li><a href="category.html">Branding</a></li>
-                    </ul>
-                </li>
-                <li class="has-children current">
-                    <a href="single-standard.html" title="">Blog</a>
-                    <ul class="sub-menu">
-                        <li><a href="single-video.html">Video Post</a></li>
-                        <li><a href="single-audio.html">Audio Post</a></li>
-                        <li><a href="single-gallery.html">Gallery Post</a></li>
-                        <li><a href="single-standard.html">Standard Post</a></li>
-                    </ul>
-                </li>
-                <li><a href="style-guide.html" title="">Styles</a></li>
-                <li><a href="about.html" title="">About</a></li>
-                <li><a href="contact.html" title="">Contact</a></li>
+                <li class="current"><a href="/" title="">Home</a></li>
+                <#if ctx??>
+                    <#if ctx.admin>
+                        <li><a href="/admin" title="">Dashboard</a></li>
+                        <li><a href="/logout" title="">Logout</a></li>
+                    <#else >
+                        <li><a href="/logout" title="">Logout</a></li>
+                    </#if>
+                <#else>
+                    <li><a href="/login" title="">Login</a></li>
+                    <li><a href="/register" title="">Register</a></li>
+                </#if>
             </ul>
         </nav> <!-- end main-nav-wrap -->
 
@@ -113,23 +101,11 @@
         <div class="col-twelve">
 
             <article class="format-standard">
-                <a href="/articles">Retour aux articles</a>
-
-                <div class="content-media">
-                    <div class="post-thumb">
-                        <img src="images/thumbs/single/single-01.jpg">
-                    </div>
-                </div>
+                <a href="/articles">Back to articles</a>
 
                 <div class="primary-content">
 
                     <h1 class="page-title">${article.title}</h1>
-
-                    <ul class="entry-meta">
-                        <li class="date">September 06, 2016 todo</li>
-                        <li class="cat"><a href="">Wordpress todo</a><a href="">Design</a></li>
-                    </ul>
-
 
                     <p>${article.text}</p>
 
@@ -158,8 +134,16 @@
                         <fieldset>
 
                             <div class="form-field">
-                                <input name="cName" type="text" id="cName" class="full-width" placeholder="Your Name"
-                                       value="">
+                                <#if ctx?? >
+                                    <h1>${ctx.name}</h1>
+                                    <input name="username" type="hidden" id="cName" class="full-width" placeholder="${ctx.name}"
+                                           value="${ctx.name}">
+                                <#else>
+                                    <input name="username" type="text" id="cName" class="full-width" placeholder="Your Name"
+                                           value="">
+                                </#if>
+
+
                             </div>
 
                             <div class="message form-field">
@@ -193,12 +177,12 @@
                         <div class="comment-content">
 
                         <div class="comment-info">
-                            <cite>Itachi Uchiha</cite>
+                            <cite>${comment.username}</cite>
 
                             <div class="comment-meta">
-                                <time class="comment-time" datetime="2014-07-12T23:05">Jul 12, 2014 @ 23:05
+                                <time class="comment-time" datetime="2014-07-12T23:05">${comment.datecreation}
                                 </time>
-                                <#if isAdmin>
+                                <#if ctx?? && ctx.admin>
                                     <span class="sep">/</span>
                                     <a href="/comments/${comment.id}?action=delete" class="red"><i class="fas fa-trash"></i></a>
                                 </#if>

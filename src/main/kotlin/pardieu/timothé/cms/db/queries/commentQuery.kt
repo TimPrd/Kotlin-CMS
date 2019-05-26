@@ -13,7 +13,7 @@ class SQLQuery(sql: String) {
 
 
     private fun getComments(): String {
-        return "SELECT b.id, b.text, b.idArticle FROM articles as a INNER JOIN comments as b ON a.id = b.idArticle AND a.id=?"
+        return "SELECT b.id, b.text, b.idArticle, b.datecreation, b.username FROM articles as a INNER JOIN comments as b ON a.id = b.idArticle AND a.id=?"
     }
 
 }

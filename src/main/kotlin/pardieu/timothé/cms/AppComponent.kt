@@ -6,9 +6,11 @@ import pardieu.timothé.cms.model.Model
 import pardieu.timothé.cms.presenter.ArticleListPresenter
 import pardieu.timothé.cms.presenter.ArticlePresenter
 import pardieu.timothé.cms.presenter.CommentPresenter
-import pardieu.timothé.control.CommentPresenterImpl
-import pardieu.timothé.control.ArticleListPresenterImpl
-import pardieu.timothé.control.ArticlePresenterImpl
+import pardieu.timothé.cms.control.CommentPresenterImpl
+import pardieu.timothé.cms.control.ArticleListPresenterImpl
+import pardieu.timothé.cms.control.ArticlePresenterImpl
+import pardieu.timothé.cms.control.UserListPresenterImpl
+import pardieu.timothé.cms.presenter.UserListPresenter
 
 class AppComponent( mysqlUrl: String, mysqlUser: String,  mysqlPassword:String) {
 
@@ -30,6 +32,10 @@ class AppComponent( mysqlUrl: String, mysqlUser: String,  mysqlPassword:String) 
 
     fun getCommentPresenter(view: CommentPresenter.View): CommentPresenter {
         return CommentPresenterImpl(getModel(), view)
+    }
+
+    fun getUserListPresenter(view: UserListPresenter.View): UserListPresenter {
+        return UserListPresenterImpl(getModel(), view)
     }
 
 

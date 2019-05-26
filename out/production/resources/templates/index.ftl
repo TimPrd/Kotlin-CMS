@@ -13,7 +13,7 @@
     <!--- basic page needs
     ================================================== -->
     <meta charset="utf-8">
-    <title>Abstract</title>
+    <title>CMS</title>
     <meta name="description" content="">
     <meta name="author" content="">
 
@@ -54,14 +54,16 @@
             <ul class="main-navigation sf-menu">
                 <li class="current"><a href="/" title="">Home</a></li>
                 <#if session??>
-                    <li><a href="/logout" title="">Logout</a></li>
-                    <li><a href="/admin" title="">Dashboard</a></li>
-                <#else >
+                    <#if session.admin>
+                        <li><a href="/admin" title="">Dashboard</a></li>
+                        <li><a href="/logout" title="">Logout</a></li>
+                    <#else >
+                        <li><a href="/logout" title="">Logout</a></li>
+                    </#if>
+                <#else>
                     <li><a href="/login" title="">Login</a></li>
                     <li><a href="/register" title="">Register</a></li>
                 </#if>
-                <li><a href="about.html" title="">About</a></li>
-                <li><a href="contact.html" title="">Contact</a></li>
             </ul>
         </nav> <!-- end main-nav-wrap -->
 
@@ -103,19 +105,13 @@
                 <article class="brick entry format-standard animate-this">
 
                 <div class="entry-thumb">
-                    <a href="single-standard.html" class="thumb-link">
                         <img src="https://picsum.photos/700/800" alt="picture">
-                    </a>
+
                 </div>
 
                 <div class="entry-text">
                 <div class="entry-header">
 
-                <div class="entry-meta">
-               			<span class="cat-links">
-               				<a href="#">Cat</a>
-               			</span>
-                </div>
 
                 <h1 class="entry-title"><a href="/articles/${item.id}">${item.title}</a></h1>
 
@@ -123,14 +119,14 @@
             <div id="text-${item.id}" class="entry-excerpt">
 
                 <#if item.text?length &gt; 100>
-                    <script>
-                        var t = document.createTextNode("${item.text?js_string}".slice(0, 250) + "... [voir la suite]");
-                        var p = document.createElement("p");
-                        p.append(t);
-                        document.getElementById("text-${item.id}").append(p)
+                <script>
+                    var t = document.createTextNode("${item.text?js_string}".slice(0, 250) + "... [see more]");
+                    var p = document.createElement("p");
+                    p.append(t);
+                    document.getElementById("text-${item.id}").append(p)
 
 
-                    </script>
+                </script>
                 <#else>
                     ${item.text}
                 </#if>
@@ -145,24 +141,6 @@
         </div> <!-- end brick-wrapper -->
 
     </div> <!-- end row -->
-
-    <div class="row">
-
-        <nav class="pagination">
-            <span class="page-numbers prev inactive">Prev</span>
-            <span class="page-numbers current">1</span>
-            <a href="#" class="page-numbers">2</a>
-            <a href="#" class="page-numbers">3</a>
-            <a href="#" class="page-numbers">4</a>
-            <a href="#" class="page-numbers">5</a>
-            <a href="#" class="page-numbers">6</a>
-            <a href="#" class="page-numbers">7</a>
-            <a href="#" class="page-numbers">8</a>
-            <a href="#" class="page-numbers">9</a>
-            <a href="#" class="page-numbers next">Next</a>
-        </nav>
-
-    </div>
 
 </section> <!-- end bricks -->
 

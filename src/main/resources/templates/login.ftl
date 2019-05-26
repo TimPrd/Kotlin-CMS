@@ -7,18 +7,17 @@
 </head>
 <body>
 
-<h1>New Article</h1>
+<h1>Login</h1>
 
 <form id="login-form" action="/login" method="post">
     <input name="name" type="text" placeholder="Username" required>
     <input name="password" type="password" placeholder="Password" required>
     <button type="submit">Login</button>
-    <label for="form-switch"><span>Register</span></label>
 </form>
 
 
 
-<a href="/articles">Retour aux articles</a>
+<a href="/articles">Back to articles</a>
 
 </body>
 </html>
