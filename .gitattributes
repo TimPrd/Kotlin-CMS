@@ -1,4 +1,4 @@
-nguist-vendored
+linguist-vendored
 *.kt linguist-vendored=false
 *.java linguist-vendored=false
 
