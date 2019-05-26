@@ -11,8 +11,10 @@ SET time_zone = "+00:00";
 -- Table structure for table `articles`
 --
 
+-- REMOVE IT IF NEEDED
 CREATE DATABASE CMS;
 USE CMS;
+-- END
 
 CREATE TABLE `articles` (
                           `id` int(11) NOT NULL,
