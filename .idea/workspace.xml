@@ -3,94 +3,6 @@
   <component name="ChangeListManager">
     <list default="true" id="7fa36ee2-de6c-46e3-8540-d5259621573d" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/classes/META-INF/CMS-IIM.kotlin_module" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/classes/pardieu/timothé/cms/App.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/classes/pardieu/timothé/cms/AuthenticatedUser.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/classes/pardieu/timothé/cms/MainKt$main$1$1.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/classes/pardieu/timothé/cms/MainKt$main$1$2.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/classes/pardieu/timothé/cms/MainKt$main$1$3.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/classes/pardieu/timothé/cms/MainKt$main$1$4$1$1.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/classes/pardieu/timothé/cms/MainKt$main$1$4$1$2.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/classes/pardieu/timothé/cms/MainKt$main$1$4$1$3.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/classes/pardieu/timothé/cms/MainKt$main$1$4$1.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/classes/pardieu/timothé/cms/MainKt$main$1$4.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/classes/pardieu/timothé/cms/MainKt$main$1$5$1.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/classes/pardieu/timothé/cms/MainKt$main$1$5$10.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/classes/pardieu/timothé/cms/MainKt$main$1$5$2.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/classes/pardieu/timothé/cms/MainKt$main$1$5$3$1.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/classes/pardieu/timothé/cms/MainKt$main$1$5$3.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/classes/pardieu/timothé/cms/MainKt$main$1$5$4.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/classes/pardieu/timothé/cms/MainKt$main$1$5$5.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/classes/pardieu/timothé/cms/MainKt$main$1$5$6$1.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/classes/pardieu/timothé/cms/MainKt$main$1$5$6.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/classes/pardieu/timothé/cms/MainKt$main$1$5$7$1.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/classes/pardieu/timothé/cms/MainKt$main$1$5$7.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/classes/pardieu/timothé/cms/MainKt$main$1$5$8$1.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/classes/pardieu/timothé/cms/MainKt$main$1$5$8$2.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/classes/pardieu/timothé/cms/MainKt$main$1$5$8.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/classes/pardieu/timothé/cms/MainKt$main$1$5$9$1$controller$1$displayArticleList$1.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/classes/pardieu/timothé/cms/MainKt$main$1$5$9$1$controller$1.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/classes/pardieu/timothé/cms/MainKt$main$1$5$9$1.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/classes/pardieu/timothé/cms/MainKt$main$1$5$9.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/classes/pardieu/timothé/cms/MainKt$main$1$5.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/classes/pardieu/timothé/cms/MainKt$main$1.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/classes/pardieu/timothé/cms/MainKt.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/classes/pardieu/timothé/cms/db/MysqlModel.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/classes/pardieu/timothé/cms/db/MysqlModel.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/classes/pardieu/timothé/cms/db/queries/SQLQuery.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/classes/pardieu/timothé/cms/db/queries/SQLQuery.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/classes/pardieu/timothé/cms/model/Comment.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/classes/pardieu/timothé/cms/model/Comment.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/classes/pardieu/timothé/cms/model/Model.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/classes/pardieu/timothé/cms/model/User.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/classes/pardieu/timothé/cms/model/User.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/classes/pardieu/timothé/cms/routes/ArticlesRoutesKt$articlesRoutes$1$controller$1$displayArticleList$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/classes/pardieu/timothé/cms/routes/ArticlesRoutesKt$articlesRoutes$1$controller$1$displayArticleList$1.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/classes/pardieu/timothé/cms/routes/ArticlesRoutesKt$articlesRoutes$1$controller$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/classes/pardieu/timothé/cms/routes/ArticlesRoutesKt$articlesRoutes$1$controller$1.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/classes/pardieu/timothé/cms/routes/ArticlesRoutesKt$articlesRoutes$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/classes/pardieu/timothé/cms/routes/ArticlesRoutesKt$articlesRoutes$1.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/classes/pardieu/timothé/cms/routes/ArticlesRoutesKt$articlesRoutes$2$controller$1$displayArticle$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/classes/pardieu/timothé/cms/routes/ArticlesRoutesKt$articlesRoutes$2$controller$1$displayArticle$1.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/classes/pardieu/timothé/cms/routes/ArticlesRoutesKt$articlesRoutes$2$controller$1$displayArticleNotFound$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/classes/pardieu/timothé/cms/routes/ArticlesRoutesKt$articlesRoutes$2$controller$1$displayArticleNotFound$1.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/classes/pardieu/timothé/cms/routes/ArticlesRoutesKt$articlesRoutes$2$controller$1$removeArticle$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/classes/pardieu/timothé/cms/routes/ArticlesRoutesKt$articlesRoutes$2$controller$1$removeArticle$1.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/classes/pardieu/timothé/cms/routes/ArticlesRoutesKt$articlesRoutes$2$controller$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/classes/pardieu/timothé/cms/routes/ArticlesRoutesKt$articlesRoutes$2$controller$1.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/classes/pardieu/timothé/cms/routes/ArticlesRoutesKt$articlesRoutes$2.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/classes/pardieu/timothé/cms/routes/ArticlesRoutesKt$articlesRoutes$2.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/classes/pardieu/timothé/cms/routes/ArticlesRoutesKt$articlesRoutes$3$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/classes/pardieu/timothé/cms/routes/ArticlesRoutesKt$articlesRoutes$3$1.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/classes/pardieu/timothé/cms/routes/ArticlesRoutesKt$articlesRoutes$3$2.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/classes/pardieu/timothé/cms/routes/ArticlesRoutesKt$articlesRoutes$3$2.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/classes/pardieu/timothé/cms/routes/ArticlesRoutesKt$articlesRoutes$3.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/classes/pardieu/timothé/cms/routes/ArticlesRoutesKt$articlesRoutes$3.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/classes/pardieu/timothé/cms/routes/ArticlesRoutesKt.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/classes/pardieu/timothé/cms/routes/ArticlesRoutesKt.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/classes/pardieu/timothé/cms/routes/CommentsRoutesKt$commentsRoutes$1$controller$1$displayArticleList$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/classes/pardieu/timothé/cms/routes/CommentsRoutesKt$commentsRoutes$1$controller$1$displayArticleList$1.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/classes/pardieu/timothé/cms/routes/CommentsRoutesKt$commentsRoutes$1$controller$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/classes/pardieu/timothé/cms/routes/CommentsRoutesKt$commentsRoutes$1$controller$1.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/classes/pardieu/timothé/cms/routes/CommentsRoutesKt$commentsRoutes$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/classes/pardieu/timothé/cms/routes/CommentsRoutesKt$commentsRoutes$1.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/classes/pardieu/timothé/cms/routes/CommentsRoutesKt$commentsRoutes$2.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/classes/pardieu/timothé/cms/routes/CommentsRoutesKt$commentsRoutes$2.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/classes/pardieu/timothé/cms/routes/CommentsRoutesKt$commentsRoutes$3$controller$1$removeComment$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/classes/pardieu/timothé/cms/routes/CommentsRoutesKt$commentsRoutes$3$controller$1$removeComment$1.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/classes/pardieu/timothé/cms/routes/CommentsRoutesKt$commentsRoutes$3$controller$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/classes/pardieu/timothé/cms/routes/CommentsRoutesKt$commentsRoutes$3$controller$1.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/classes/pardieu/timothé/cms/routes/CommentsRoutesKt$commentsRoutes$3.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/classes/pardieu/timothé/cms/routes/CommentsRoutesKt$commentsRoutes$3.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/classes/pardieu/timothé/cms/routes/CommentsRoutesKt.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/classes/pardieu/timothé/cms/routes/CommentsRoutesKt.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/classes/pardieu/timothé/cms/tpl/IndexContext.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/classes/pardieu/timothé/cms/tpl/IndexContext.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/classes/pardieu/timothé/control/ArticleListPresenterImpl.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/classes/pardieu/timothé/control/ArticlePresenterImpl.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/classes/pardieu/timothé/control/CommentPresenterImpl.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/resources/templates/article.ftl" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/resources/templates/article.ftl" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/resources/templates/dashboard.ftl" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/resources/templates/dashboard.ftl" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/resources/templates/index.ftl" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/resources/templates/index.ftl" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/resources/templates/register.ftl" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/resources/templates/register.ftl" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/kotlin/pardieu/timothé/cms/AppComponent.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/kotlin/pardieu/timothé/cms/AppComponent.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/kotlin/pardieu/timothé/cms/db/MysqlModel.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/kotlin/pardieu/timothé/cms/db/MysqlModel.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/kotlin/pardieu/timothé/cms/db/queries/commentQuery.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/kotlin/pardieu/timothé/cms/db/queries/commentQuery.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/kotlin/pardieu/timothé/cms/main.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/kotlin/pardieu/timothé/cms/main.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/kotlin/pardieu/timothé/cms/model/Comment.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/kotlin/pardieu/timothé/cms/model/Comment.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/kotlin/pardieu/timothé/cms/model/Model.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/kotlin/pardieu/timothé/cms/model/Model.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/kotlin/pardieu/timothé/cms/model/User.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/kotlin/pardieu/timothé/cms/model/User.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/kotlin/pardieu/timothé/cms/routes/articlesRoutes.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/kotlin/pardieu/timothé/cms/routes/articlesRoutes.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/kotlin/pardieu/timothé/cms/routes/commentsRoutes.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/kotlin/pardieu/timothé/cms/routes/commentsRoutes.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/kotlin/pardieu/timothé/cms/tpl/IndexContext.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/kotlin/pardieu/timothé/cms/tpl/IndexContext.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/kotlin/pardieu/timothé/cms/tpl/Session.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/kotlin/pardieu/timothé/cms/tpl/Session.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/kotlin/pardieu/timothé/control/ArticleListPresenterImpl.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/kotlin/pardieu/timothé/cms/control/ArticleListPresenterImpl.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/kotlin/pardieu/timothé/control/ArticlePresenterImpl.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/kotlin/pardieu/timothé/cms/control/ArticlePresenterImpl.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/kotlin/pardieu/timothé/control/CommentPresenterImpl.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/kotlin/pardieu/timothé/cms/control/CommentPresenterImpl.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/templates/article.ftl" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/templates/article.ftl" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/templates/create.ftl" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/templates/create.ftl" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/templates/dashboard.ftl" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/templates/dashboard.ftl" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/templates/index.ftl" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/templates/index.ftl" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/templates/login.ftl" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/templates/login.ftl" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/templates/register.ftl" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/templates/register.ftl" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/kotlin/MySQLModelTests.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/kotlin/MySQLModelTests.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/kotlin/PresenterTests.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/kotlin/TestTest.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/kotlin/TestTest.kt" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <ignored path="$PROJECT_DIR$/.gradle/" />
@@ -157,28 +69,24 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file pinned="false" current-in-tab="true">
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/kotlin/pardieu/timothé/cms/main.kt">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="152">
-              <caret line="52" column="48" selection-start-line="52" selection-start-column="48" selection-end-line="52" selection-end-column="48" />
+            <state relative-caret-position="62">
+              <caret line="49" column="5" selection-start-line="49" selection-start-column="5" selection-end-line="49" selection-end-column="5" />
             </state>
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/kotlin/pardieu/timothé/cms/tpl/UserPrincipalCustom.kt">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="64">
-              <caret line="4" column="77" lean-forward="true" selection-start-line="4" selection-start-column="77" selection-end-line="4" selection-end-column="77" />
-            </state>
-          </provider>
+      <file pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/settings.gradle">
+          <provider selected="true" editor-type-id="text-editor" />
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/kotlin/pardieu/timothé/cms/routes/adminRoutes.kt">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-392">
+            <state relative-caret-position="128">
               <caret line="25" column="33" selection-start-line="25" selection-start-column="33" selection-end-line="25" selection-end-column="33" />
             </state>
           </provider>
@@ -196,7 +104,7 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/kotlin/pardieu/timothé/cms/db/MysqlModel.kt">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="162">
+            <state relative-caret-position="2192">
               <caret line="137" selection-start-line="137" selection-end-line="137" />
               <folding>
                 <element signature="e#32#237#0" expanded="true" />
@@ -214,7 +122,7 @@
         <entry file="file://$PROJECT_DIR$/src/main/kotlin/pardieu/timothé/cms/config.properties">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="32">
-              <caret line="2" column="12" lean-forward="true" selection-start-line="2" selection-start-column="12" selection-end-line="2" selection-end-column="12" />
+              <caret line="2" column="12" selection-start-line="2" selection-start-column="12" selection-end-line="2" selection-end-column="12" />
             </state>
           </provider>
         </entry>
@@ -223,7 +131,7 @@
         <entry file="file://$PROJECT_DIR$/src/main/kotlin/pardieu/timothé/cms/model/User.kt">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="80">
-              <caret line="5" column="25" lean-forward="true" selection-start-line="5" selection-start-column="25" selection-end-line="5" selection-end-column="25" />
+              <caret line="5" column="25" selection-start-line="5" selection-start-column="25" selection-end-line="5" selection-end-column="25" />
             </state>
           </provider>
         </entry>
@@ -231,7 +139,7 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/kotlin/pardieu/timothé/cms/model/Model.kt">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="376">
+            <state relative-caret-position="1184">
               <caret line="74" selection-start-line="74" selection-end-line="74" />
             </state>
           </provider>
@@ -368,6 +276,7 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
+      <pane id="PackagesPane" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -406,76 +315,12 @@
               <item name="kotlin" type="8a07ba80:GradleTreeStructureProvider$GradleModuleDirectoryNode" />
               <item name="src" type="462c0819:PsiDirectoryNode" />
               <item name="main" type="8a07ba80:GradleTreeStructureProvider$GradleModuleDirectoryNode" />
-              <item name="kotlin" type="462c0819:PsiDirectoryNode" />
-              <item name="pardieu" type="462c0819:PsiDirectoryNode" />
-              <item name="timothé" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="CMS-IIM" type="b2602c69:ProjectViewProjectNode" />
-              <item name="kotlin" type="8a07ba80:GradleTreeStructureProvider$GradleModuleDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="8a07ba80:GradleTreeStructureProvider$GradleModuleDirectoryNode" />
-              <item name="kotlin" type="462c0819:PsiDirectoryNode" />
-              <item name="pardieu" type="462c0819:PsiDirectoryNode" />
-              <item name="timothé" type="462c0819:PsiDirectoryNode" />
-              <item name="cms" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="CMS-IIM" type="b2602c69:ProjectViewProjectNode" />
-              <item name="kotlin" type="8a07ba80:GradleTreeStructureProvider$GradleModuleDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="8a07ba80:GradleTreeStructureProvider$GradleModuleDirectoryNode" />
-              <item name="kotlin" type="462c0819:PsiDirectoryNode" />
-              <item name="pardieu" type="462c0819:PsiDirectoryNode" />
-              <item name="timothé" type="462c0819:PsiDirectoryNode" />
-              <item name="cms" type="462c0819:PsiDirectoryNode" />
-              <item name="model" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="CMS-IIM" type="b2602c69:ProjectViewProjectNode" />
-              <item name="kotlin" type="8a07ba80:GradleTreeStructureProvider$GradleModuleDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="8a07ba80:GradleTreeStructureProvider$GradleModuleDirectoryNode" />
-              <item name="kotlin" type="462c0819:PsiDirectoryNode" />
-              <item name="pardieu" type="462c0819:PsiDirectoryNode" />
-              <item name="timothé" type="462c0819:PsiDirectoryNode" />
-              <item name="cms" type="462c0819:PsiDirectoryNode" />
-              <item name="presenter" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="CMS-IIM" type="b2602c69:ProjectViewProjectNode" />
-              <item name="kotlin" type="8a07ba80:GradleTreeStructureProvider$GradleModuleDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="8a07ba80:GradleTreeStructureProvider$GradleModuleDirectoryNode" />
-              <item name="kotlin" type="462c0819:PsiDirectoryNode" />
-              <item name="pardieu" type="462c0819:PsiDirectoryNode" />
-              <item name="timothé" type="462c0819:PsiDirectoryNode" />
-              <item name="cms" type="462c0819:PsiDirectoryNode" />
-              <item name="routes" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="CMS-IIM" type="b2602c69:ProjectViewProjectNode" />
-              <item name="kotlin" type="8a07ba80:GradleTreeStructureProvider$GradleModuleDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="8a07ba80:GradleTreeStructureProvider$GradleModuleDirectoryNode" />
-              <item name="kotlin" type="462c0819:PsiDirectoryNode" />
-              <item name="pardieu" type="462c0819:PsiDirectoryNode" />
-              <item name="timothé" type="462c0819:PsiDirectoryNode" />
-              <item name="cms" type="462c0819:PsiDirectoryNode" />
-              <item name="tpl" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="CMS-IIM" type="b2602c69:ProjectViewProjectNode" />
-              <item name="kotlin" type="8a07ba80:GradleTreeStructureProvider$GradleModuleDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="8a07ba80:GradleTreeStructureProvider$GradleModuleDirectoryNode" />
               <item name="resources" type="462c0819:PsiDirectoryNode" />
             </path>
           </expand>
           <select />
         </subPane>
       </pane>
-      <pane id="PackagesPane" />
       <pane id="Scope" />
     </panes>
   </component>
@@ -483,13 +328,14 @@
     <property name="DatabaseDriversLRU" value="mysql" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
-    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1558835699565" />
+    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1558839251926" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="list.type.of.created.stylesheet" value="CSS" />
     <property name="nodejs_interpreter_path.stuck_in_default_project" value="undefined stuck path" />
     <property name="nodejs_npm_path_reset_for_default_project" value="true" />
     <property name="project.structure.last.edited" value="Modules" />
     <property name="project.structure.proportion" value="0.0" />
-    <property name="project.structure.side.proportion" value="0.0" />
+    <property name="project.structure.side.proportion" value="0.2" />
     <property name="restartRequiresConfirmation" value="false" />
     <property name="settings.editor.selected.configurable" value="MTConfigurable" />
   </component>
@@ -607,7 +453,9 @@
       <updated>1556784048916</updated>
       <workItem from="1556784055039" duration="1417000" />
       <workItem from="1556786118830" duration="21561000" />
-      <workItem from="1556878834087" duration="88822000" />
+      <workItem from="1556878834087" duration="89959000" />
+      <workItem from="1558838457722" duration="34000" />
+      <workItem from="1558838738319" duration="114000" />
     </task>
     <servers />
   </component>
@@ -644,13 +492,12 @@
     </history-entry>
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="111800000" />
+    <option name="totallyTimeSpent" value="113085000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="23" width="1440" height="877" extended-state="0" />
-    <editor active="true" />
     <layout>
-      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.25679544" />
+      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.2639485" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Designer" order="2" />
       <window_info id="Image Layers" order="3" />
@@ -665,10 +512,10 @@
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
       <window_info anchor="bottom" id="TODO" order="6" />
       <window_info anchor="bottom" id="Build" order="7" weight="0.32920793" />
-      <window_info anchor="bottom" id="Terminal" order="8" weight="0.12162162" />
+      <window_info active="true" anchor="bottom" id="Terminal" order="8" visible="true" weight="0.20286086" />
       <window_info anchor="bottom" id="Docker" order="9" show_stripe_button="false" />
       <window_info anchor="bottom" id="Event Log" order="10" sideWeight="0.5007153" side_tool="true" weight="0.37960687" />
-      <window_info anchor="bottom" id="Messages" order="11" visible="true" weight="0.32769832" />
+      <window_info anchor="bottom" id="Messages" order="11" weight="0.32769832" />
       <window_info anchor="bottom" id="Database Changes" order="12" show_stripe_button="false" />
       <window_info anchor="bottom" id="Version Control" order="13" />
       <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
@@ -699,19 +546,6 @@
     </breakpoint-manager>
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/src/main/resources/static/js/plugins.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="272">
-          <caret line="17" column="23" lean-forward="true" selection-start-line="17" selection-start-column="23" selection-end-line="17" selection-end-column="23" />
-          <folding>
-            <element signature="n#style#0;n#object#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#div#0;n#!!top" expanded="true" />
-            <element signature="e#143#150#1" expanded="true" />
-            <element signature="n#style#0;n#span#0;n#!!top" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/resources/static/js/jquery-2.1.3.min.js">
       <provider selected="true" editor-type-id="text-editor" />
     </entry>
@@ -736,13 +570,7 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/resources/templates/nav.ftl">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="48">
-          <caret line="3" column="20" selection-start-line="3" selection-start-column="13" selection-end-line="3" selection-end-column="20" />
-        </state>
-      </provider>
-    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/resources/templates/nav.ftl" />
     <entry file="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/io.ktor/ktor-server-core/1.2.0-rc/ffbf4b1c3f72d19b3d69033697415c2480322144/ktor-server-core-1.2.0-rc-sources.jar!/jvmMain/io/ktor/sessions/SessionsBuilder.kt">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="163">
@@ -841,16 +669,7 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/test/kotlin/PresenterTests.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="64">
-          <caret line="4" column="14" selection-start-line="4" selection-start-column="14" selection-end-line="4" selection-end-column="14" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
+    <entry file="file://$PROJECT_DIR$/src/test/kotlin/PresenterTests.java" />
     <entry file="file://$PROJECT_DIR$/src/test/kotlin/MySQLModelTests.kt">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="336">
@@ -1003,9 +822,37 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/kotlin/pardieu/timothé/cms/main.kt">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="62">
+          <caret line="49" column="5" selection-start-line="49" selection-start-column="5" selection-end-line="49" selection-end-column="5" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/kotlin/pardieu/timothé/cms/tpl/UserPrincipalCustom.kt">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="64">
+          <caret line="4" column="77" selection-start-line="4" selection-start-column="77" selection-end-line="4" selection-end-column="77" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/kotlin/pardieu/timothé/cms/routes/adminRoutes.kt">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="128">
+          <caret line="25" column="33" selection-start-line="25" selection-start-column="33" selection-end-line="25" selection-end-column="33" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/kotlin/pardieu/timothé/cms/routes/articlesRoutes.kt">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="64">
+          <caret line="23" column="10" selection-start-line="23" selection-end-line="24" />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/kotlin/pardieu/timothé/cms/db/MysqlModel.kt">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="162">
+        <state relative-caret-position="2192">
           <caret line="137" selection-start-line="137" selection-end-line="137" />
           <folding>
             <element signature="e#32#237#0" expanded="true" />
@@ -1013,16 +860,26 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/dump.sql">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/kotlin/pardieu/timothé/cms/config.properties">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="32">
+          <caret line="2" column="12" selection-start-line="2" selection-start-column="12" selection-end-line="2" selection-end-column="12" />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/kotlin/pardieu/timothé/cms/model/User.kt">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="80">
-          <caret line="5" column="25" lean-forward="true" selection-start-line="5" selection-start-column="25" selection-end-line="5" selection-end-column="25" />
+          <caret line="5" column="25" selection-start-line="5" selection-start-column="25" selection-end-line="5" selection-end-column="25" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/kotlin/pardieu/timothé/cms/model/Model.kt">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="376">
+        <state relative-caret-position="1184">
           <caret line="74" selection-start-line="74" selection-end-line="74" />
         </state>
       </provider>
@@ -1037,43 +894,8 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/dump.sql">
+    <entry file="file://$PROJECT_DIR$/settings.gradle">
       <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/kotlin/pardieu/timothé/cms/routes/articlesRoutes.kt">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="64">
-          <caret line="23" column="10" selection-start-line="23" selection-end-line="24" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/kotlin/pardieu/timothé/cms/routes/adminRoutes.kt">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-392">
-          <caret line="25" column="33" selection-start-line="25" selection-start-column="33" selection-end-line="25" selection-end-column="33" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/kotlin/pardieu/timothé/cms/tpl/UserPrincipalCustom.kt">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="64">
-          <caret line="4" column="77" lean-forward="true" selection-start-line="4" selection-start-column="77" selection-end-line="4" selection-end-column="77" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/kotlin/pardieu/timothé/cms/config.properties">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="32">
-          <caret line="2" column="12" lean-forward="true" selection-start-line="2" selection-start-column="12" selection-end-line="2" selection-end-column="12" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/kotlin/pardieu/timothé/cms/main.kt">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="152">
-          <caret line="52" column="48" selection-start-line="52" selection-start-column="48" selection-end-line="52" selection-end-column="48" />
-        </state>
-      </provider>
     </entry>
   </component>
   <component name="masterDetails">
