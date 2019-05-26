@@ -1,14 +1,26 @@
 # Kotlin-CMS
 
+## Dump SQL
+
+**Warning**: 
+
+The dump will create a database named "CMS".
+Please, remove those two lines if needed (l.15).
+
+````
+CREATE DATABASE CMS;
+USE CMS;
+````
+
+Export from DB is here : [dump.sql](dump.sql)
+
+
 ## Config
 
 Please change the values in [config.properties](src/main/kotlin/pardieu/timothé/cms/config.properties)
 
-Warning: port by default is **8003**
+**Warning**: port by default is **8003**
 
-## Dump SQL 
-
-Export from DB is here : [dump.sql](dump.sql)
 
 ## Users
 
@@ -27,7 +39,7 @@ Two users are available :
 
  - [x] Affichage des commentaires d'un article.
 
-- [x] Possibilite de poster un commentaire (sans etre connecté) depuis la page d'un article.
+ - [x] Possibilite de poster un commentaire (sans etre connecté) depuis la page d'un article.
 
  - [x] Connection a une interface d'administration avec login / mot de passe.
 
