@@ -1,4 +1,4 @@
-# Kotlin-CMS
+# Kotlin-CMS [![CodeFactor](https://www.codefactor.io/repository/github/timprd/kotlin-cms/badge/master)](https://www.codefactor.io/repository/github/timprd/kotlin-cms/overview/master)
 
 ## Dump SQL
 
